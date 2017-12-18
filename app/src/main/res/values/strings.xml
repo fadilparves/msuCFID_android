@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">msuCFID</string>
+    <string name="video_btn">Video</string>
+    <string name="notes_btn">Notes</string>
+    <string name="personal_btn">Personal Notes</string>
+</resources>

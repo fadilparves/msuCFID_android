@@ -15,7 +15,7 @@ import java.util.List;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String DATABASE_NAME = "personal_notes";
     private static final String TABLE_NAME = "personalNotes";
     private static final String KEY_ID = "id";
@@ -95,7 +95,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return personalNoteList;
     }
 
-    public int updatePersonalNote(PersonalNote pn){
+    public void updatePersonalNote(PersonalNote pn){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues v = new ContentValues();
@@ -103,8 +103,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         v.put(KEY_BODY, pn.getBody());
         v.put(KEY_CONTENT_ID, pn.getContent_id());
 
-        return db.update(TABLE_NAME, v, KEY_ID + " = ?",
-                new String[] { String.valueOf(pn.getId())});
+        db.update(TABLE_NAME, v, KEY_ID + " = ?", new String[] { String.valueOf(pn.getId())});
+        db.close();
     }
 
     public void deletePersonalNote(PersonalNote pn){

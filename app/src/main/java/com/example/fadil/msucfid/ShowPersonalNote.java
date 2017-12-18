@@ -8,7 +8,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by fadil
@@ -81,7 +80,13 @@ public class ShowPersonalNote extends AppCompatActivity{
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ShowPersonalNote.this, "Edit", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ShowPersonalNote.this, "Edit", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ShowPersonalNote.this, UpdatePersonalNotes.class);
+                intent.putExtra("ID", ids.toString());
+                intent.putExtra("Title", pn.getTitle());
+                intent.putExtra("Body", pn.getBody());
+                intent.putExtra("ContentID", pn.getContent_id());
+                startActivity(intent);
             }
         });
     }

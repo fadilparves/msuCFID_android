@@ -25,9 +25,10 @@
         <activity android:name=".InterActivity" />
         <activity android:name=".VideoListActivity"/>
         <activity android:name=".VideoActivity"/>
-        <activity android:name=".NewPersonalNote"/>
+        <activity android:name=".NewPersonalNote" android:noHistory="true"/>
         <activity android:name=".PersonalNotesListActivity"/>
         <activity android:name=".ShowPersonalNote"/>
+        <activity android:name=".UpdatePersonalNotes" android:noHistory="true"/>
     </application>
 
 </manifest>

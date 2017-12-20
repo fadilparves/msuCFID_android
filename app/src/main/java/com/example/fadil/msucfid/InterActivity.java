@@ -32,7 +32,7 @@ public class InterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Toast.makeText(InterActivity.this, "Notes" + id, Toast.LENGTH_SHORT).show();
-                Intent intNotes = new Intent(InterActivity.this, ContentDisplay.class);
+                Intent intNotes = new Intent(InterActivity.this, ChooseSubChapter.class);
                 intNotes.putExtra("ID", id);
                 startActivity(intNotes);
             }

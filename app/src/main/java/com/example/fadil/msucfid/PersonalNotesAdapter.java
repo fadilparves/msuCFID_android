@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by fadil on 17/12/2017.
+ * Created by fadil
  */
 
 public class PersonalNotesAdapter extends RecyclerView.Adapter<PersonalNotesAdapter.ViewHolder> {

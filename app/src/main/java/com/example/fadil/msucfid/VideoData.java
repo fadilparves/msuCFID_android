@@ -1,7 +1,7 @@
 package com.example.fadil.msucfid;
 
 /**
- * Created by fadil on 17/12/2017.
+ * Created by fadil
  */
 
 class VideoData {

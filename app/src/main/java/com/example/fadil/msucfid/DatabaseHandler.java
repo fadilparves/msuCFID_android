@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by fadil on 17/12/2017.
+ * Created by fadil
  */
 
 public class DatabaseHandler extends SQLiteOpenHelper {

@@ -13,7 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 /**
- * Created by fadil on 15/12/2017.
+ * Created by fadil
  */
 
 public class ContentDisplay extends AppCompatActivity {
@@ -42,7 +42,7 @@ public class ContentDisplay extends AppCompatActivity {
             }
         });
 
-        mWebview.loadUrl("http://c14c113c.ngrok.io/api/"+ contentid + "/stream_content");
+        mWebview.loadUrl("http://e242fe3d.ngrok.io/api/"+ contentid + "/stream_content");
         setContentView(mWebview);
     }
 

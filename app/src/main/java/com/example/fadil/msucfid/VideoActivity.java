@@ -8,7 +8,7 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 /**
- * Created by fadil on 17/12/2017.
+ * Created by fadil
  */
 
 public class VideoActivity extends AppCompatActivity {
@@ -24,7 +24,7 @@ public class VideoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String file = intent.getStringExtra("File");
 
-        url = "http://c14c113c.ngrok.io" + file ;
+        url = "http://e242fe3d.ngrok.io" + file ;
 
         vid = findViewById(R.id.vid);
 

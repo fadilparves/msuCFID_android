@@ -22,33 +22,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by fadil
+ * Created by fadil on 20/12/2017.
  */
 
-public class VideoListActivity extends AppCompatActivity {
+public class ChooseSubChapter extends AppCompatActivity {
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
     private DividerItemDecoration dividerItemDecoration;
     private RecyclerView.Adapter adapter;
-    private List<VideoData> data_list;
-    private static final String TAG = "CourseActivity";
+    private List<ChapterData> data_list;
+    private static final String TAG = "ChooseSubChapter";
     private String url;
     public String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.course_list);
+        setContentView(R.layout.activity_chapter);
 
         Intent intent = getIntent();
         id = intent.getStringExtra("ID");
         //Toast.makeText(VideoListActivity.this, id, Toast.LENGTH_SHORT).show();
-        url = "http://e242fe3d.ngrok.io/api/" + id + "/videos";
+        url = "http://e242fe3d.ngrok.io/api/" + id + "/get_sub_one";
 
         recyclerView = findViewById(R.id.recycler_view);
 
         data_list = new ArrayList<>();
-        adapter = new CustomVideoAdapter(getApplicationContext(), data_list);
+        adapter = new ChooseChapterAdapter(getApplicationContext(), data_list);
 
         linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -70,11 +70,12 @@ public class VideoListActivity extends AppCompatActivity {
                     try {
                         JSONObject jsonObject = response.getJSONObject(i);
 
-                        VideoData vd= new VideoData();
-                        vd.setId(jsonObject.getInt("id"));
-                        vd.setFile_path(jsonObject.getString("file_path"));
+                        ChapterData cd= new ChapterData();
+                        cd.setId(jsonObject.getInt("id"));
+                        cd.setTitle(jsonObject.getString("title"));
+                        cd.setSub_num(jsonObject.getString("sub_number"));
 
-                        data_list.add(vd);
+                        data_list.add(cd);
                         System.out.println("Data" + i + "added");
                     } catch (JSONException e) {
                         e.printStackTrace();

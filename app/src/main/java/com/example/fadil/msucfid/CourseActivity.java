@@ -30,7 +30,7 @@ public class CourseActivity extends AppCompatActivity {
     private CustomAdapter customAdapter;
     private List<ContentList> data_list;
     private static final String TAG = "CourseActivity";
-    private String url = "http://c14c113c.ngrok.io/api/1/get_content";
+    private String url = "http://e242fe3d.ngrok.io/api/1/get_content";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,6 @@ public class CourseActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         getData();
-
     }
 
     private void getData() {
